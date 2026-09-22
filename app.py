@@ -65,4 +65,8 @@ with gr.Blocks(title="Automated Important Message Detection Agent") as demo:
     clear_btn.click(fn=lambda: ("", ""), inputs=None, outputs=[input_box, output_box])
 
 if __name__ == "__main__":
-    demo.launch(share=True)
+    demo.launch(
+        server_name="0.0.0.0",
+        server_port=int(os.environ.get("PORT", 10000)),
+        share=False
+    )
